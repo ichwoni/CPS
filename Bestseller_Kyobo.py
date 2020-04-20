@@ -54,7 +54,7 @@ class BookScraper :
         wr = csv.writer(file)
 
         for i in range(len(title)) : 
-            wr.writerow([order[i]+1, title[i], author[i], oprice[i], sprice[i]])
+            wr.writerow([order[i]+1, title[i], author[i], oprice[i]+'원', sprice[i]+'원'])
         
         file.close()
 
