@@ -4,8 +4,9 @@ from bs4 import BeautifulSoup
 import os
 import time
 
-path = os.getcwd() + "./chromedriver.exe" #실제로 할 때는 크롬드라이버가 가장 처음에 다운로드됐던 경로로 설정해야 실행됨 
-driver = webdriver.Chrome(path)
+#path = os.getcwd() + "./chromedriver.exe" #실제로 할 때는 크롬드라이버가 가장 처음에 다운로드됐던 경로로 설정해야 실행됨 
+
+driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe")
 
 try :
     driver.get("https://www.naver.com/")
@@ -29,8 +30,8 @@ try :
        
         for c in cont :
             print(c.find("dd", class_ = "tit").find("a").text)
-
-        driver.find_element_by_xpath('//*[@id="main_pack"]/div[2]/div/div[2]/div/div[1]/div[5]/ul[1]/li[1]/div[2]/dl/dd[1]/a').click()
+        
+        driver.find_element_by_xpath('//*[@id="main_pack"]/div[2]/div/div[2]/div/div[1]/div[6]/a[2]').click()
 
     
 
