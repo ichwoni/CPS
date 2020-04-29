@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import os
 import time
 
-path = os.getcwd() + "./chromedriver.exe"
+path = os.getcwd() + "./chromedriver.exe" #실제로 할 때는 크롬드라이버가 가장 처음에 다운로드됐던 경로로 설정해야 실행됨 
 driver = webdriver.Chrome(path)
 
 try :
