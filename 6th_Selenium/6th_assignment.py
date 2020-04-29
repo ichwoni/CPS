@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 import os
 import time
 
-driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe")
+path = os.getcwd() + "./chromedriver.exe"
+driver = webdriver.Chrome(path)
 
 try :
     driver.get("https://www.naver.com/")
@@ -22,9 +23,9 @@ try :
         html = driver.page_source
         bs = BeautifulSoup(html, "html.parser")
 
-        cont = bs.find("div", class_ = "content_search section _art_exhibition_base").find_all("dl", class_ = "item_list")
+        cont = bs.find("div", class_ = "main_pack").find_all("dl", class_ = "item_list")
 
-        print("\npage: ", i)
+        print("\npage: ", i+1)
        
         for c in cont :
             print(c.find("dd", class_ = "tit").find("a").text)
